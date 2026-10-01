@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#49225b">
+  <meta name="description" content="Dashboard akuntansi dan operasional Pure Laundry.">
+  <title>Pure Laundry | Sistem Akuntansi</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="washer-art" aria-hidden="true">
+    <svg viewBox="0 0 480 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="washer-shell" x1="88" y1="48" x2="392" y2="468" gradientUnits="userSpaceOnUse"><stop stop-color="#fffdfd"/><stop offset="1" stop-color="#e7dbef"/></linearGradient>
+        <linearGradient id="washer-glass" x1="170" y1="207" x2="310" y2="352" gradientUnits="userSpaceOnUse"><stop stop-color="#fffdfd"/><stop offset="1" stop-color="#d8c0e3"/></linearGradient>
+        <clipPath id="washer-drum-clip"><circle cx="240" cy="286" r="74"/></clipPath>
+      </defs>
+      <ellipse cx="240" cy="474" rx="155" ry="20" fill="#49225b" fill-opacity=".12"/>
+      <rect x="88" y="48" width="304" height="420" rx="34" fill="url(#washer-shell)" stroke="#6e3482" stroke-opacity=".55" stroke-width="4"/>
+      <path d="M122 49h236a30 30 0 0 1 30 30v97H92V79a30 30 0 0 1 30-30Z" fill="#49225b"/>
+      <rect x="119" y="81" width="80" height="38" rx="10" fill="#e7dbef" fill-opacity=".18" stroke="#e7dbef" stroke-opacity=".32"/>
+      <path d="M135 100h46M135 108h28" stroke="#e7dbef" stroke-linecap="round" stroke-opacity=".8" stroke-width="4"/>
+      <circle cx="333" cy="101" r="27" fill="#e7dbef" fill-opacity=".18" stroke="#e7dbef" stroke-opacity=".65" stroke-width="3"/>
+      <circle cx="333" cy="101" r="15" stroke="#e7dbef" stroke-opacity=".9" stroke-width="3"/>
+      <path d="M333 91v10l7 5" stroke="#e7dbef" stroke-linecap="round" stroke-width="3"/>
+      <circle cx="378" cy="143" r="5" fill="#a56abd"/>
+      <circle cx="240" cy="286" r="108" fill="#49225b" fill-opacity=".16" stroke="#49225b" stroke-width="8"/>
+      <circle cx="240" cy="286" r="91" fill="url(#washer-glass)" stroke="#fffdfd" stroke-width="8"/>
+      <g class="washer-drum-rotation" clip-path="url(#washer-drum-clip)">
+        <circle cx="240" cy="286" r="74" fill="#e7dbef"/>
+        <path d="m165 303 25-34 20 10 17-25 28 14 26-22 34 33-13 53-43 25-61-5-33-27Z" fill="#a56abd" fill-opacity=".7"/>
+        <path d="m218 274 22-19 22 12-4 30-25 9-18-12 3-20Z" fill="#f5ebfa"/>
+        <path d="m253 291 21-18 22 9 7 28-20 18-26-8-4-29Z" fill="#6e3482" fill-opacity=".68"/>
+        <path d="M174 326c28-18 54 15 81-1s43-17 59-5" stroke="#fffdfd" stroke-linecap="round" stroke-opacity=".8" stroke-width="5"/>
+      </g>
+      <circle cx="240" cy="286" r="74" stroke="#6e3482" stroke-opacity=".5" stroke-width="4"/>
+      <circle class="washer-bubble bubble-one" cx="153" cy="215" r="9" fill="#fffdfd" fill-opacity=".85" stroke="#a56abd" stroke-width="2"/>
+      <circle class="washer-bubble bubble-two" cx="339" cy="242" r="6" fill="#fffdfd" fill-opacity=".9" stroke="#a56abd" stroke-width="2"/>
+      <circle class="washer-bubble bubble-three" cx="320" cy="365" r="8" fill="#fffdfd" fill-opacity=".8" stroke="#a56abd" stroke-width="2"/>
+      <path class="washer-sparkle sparkle-one" d="M65 176c0 9 4 13 13 13-9 0-13 4-13 13 0-9-4-13-13-13 9 0 13-4 13-13Z" fill="#a56abd"/>
+      <path class="washer-sparkle sparkle-two" d="M416 190c0 7 3 10 10 10-7 0-10 3-10 10 0-7-3-10-10-10 7 0 10-3 10-10Z" fill="#6e3482"/>
+      <path d="M132 405h216" stroke="#6e3482" stroke-opacity=".12" stroke-linecap="round" stroke-width="7"/>
+    </svg>
+  </div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#dashboard" aria-label="Pure Laundry, beranda">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M8 18h32l-3.2 23H11.2L8 18Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 18c.8-6.1 4.2-9 9-9s8.2 2.9 9 9M17 25c1.9 2.2 4.2 2.2 6.1 0s4.2-2.2 6.1 0 4.2 2.2 6.1 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M17 34h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </span>
+        <span class="brand-copy"><strong>Pure Laundry</strong><small>LAUNDRY ACCOUNTING</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a class="nav-link active" href="#dashboard" data-page="dashboard"><span class="nav-icon">⌂</span>Dashboard</a>
+        <a class="nav-link" href="#pelanggan" data-page="pelanggan"><span class="nav-icon">♙</span>Pelanggan</a>
+        <a class="nav-link" href="#layanan" data-page="layanan"><span class="nav-icon">✳</span>Layanan</a>
+        <a class="nav-link" href="#transaksi" data-page="transaksi"><span class="nav-icon">▤</span>Transaksi</a>
+        <a class="nav-link" href="#pembayaran" data-page="pembayaran"><span class="nav-icon">◈</span>Pembayaran</a>
+      </nav>
+      <div class="top-actions">
+        <span class="connection-pill" id="connection-pill"><i></i><span id="connection-label">Mode lokal</span></span>
+        <button class="icon-button settings-button" id="settings-button" type="button" aria-label="Pengaturan Supabase" title="Pengaturan Supabase">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.3a3.7 3.7 0 1 0 0 7.4 3.7 3.7 0 0 0 0-7.4Z"/><path d="m19.3 13.5 1.1.9-1.1 1.9-1.4-.5a7.8 7.8 0 0 1-1.6.9l-.3 1.5h-2.2l-.3-1.5a7.8 7.8 0 0 1-1.6-.9l-1.4.5-1.1-1.9 1.1-.9a7.3 7.3 0 0 1 0-1.8l-1.1-.9 1.1-1.9 1.4.5a7.8 7.8 0 0 1 1.6-.9l.3-1.5H16l.3 1.5a7.8 7.8 0 0 1 1.6.9l1.4-.5 1.1 1.9-1.1.9a7.3 7.3 0 0 1 0 1.8Z" transform="translate(-1 -1)"/></svg>
+        </button>
+        <div class="admin-chip"><span class="admin-avatar">A</span><span class="admin-name">Admin</span></div>
+      </div>
+    </header>
+
+    <main id="main-content" class="main-content" tabindex="-1"></main>
+    <footer class="page-footer"><span>Pure Laundry <span class="footer-dot">·</span> Bersih dalam setiap hitungan.</span><span id="footer-date"></span></footer>
+  </div>
+
+  <dialog class="modal" id="record-modal" aria-labelledby="record-title"><div class="modal-content"><div class="modal-heading"><div><p class="eyebrow" id="record-eyebrow">DATA MASTER</p><h2 id="record-title">Tambah data</h2></div><button class="icon-button close-modal" type="button" aria-label="Tutup">×</button></div><form id="record-form"><div class="form-fields" id="record-fields"></div><div class="form-actions"><button class="button button-quiet close-modal" type="button">Batal</button><button class="button button-primary" type="submit">Simpan data <span aria-hidden="true">↗</span></button></div></form></div></dialog>
+
+  <dialog class="modal settings-modal" id="settings-modal" aria-labelledby="settings-title"><div class="modal-content"><div class="modal-heading"><div><p class="eyebrow">KONEKSI DATABASE</p><h2 id="settings-title">Hubungkan Supabase</h2></div><button class="icon-button close-modal" type="button" aria-label="Tutup">×</button></div><p class="modal-intro">Masukkan URL project dan publishable key Supabase. Pengaturan disimpan di browser ini.</p><form id="settings-form"><label class="field"><span>Project URL</span><input name="url" type="url" placeholder="https://project-id.supabase.co" autocomplete="url" required></label><label class="field"><span>Publishable key</span><input name="key" type="password" placeholder="sb_publishable_..." autocomplete="off" required></label><p class="form-note">Jalankan SQL di folder database terlebih dahulu. Jangan gunakan service role key di browser.</p><div class="form-actions"><button class="button button-quiet close-modal" type="button">Batal</button><button class="button button-primary" type="submit">Simpan koneksi <span aria-hidden="true">↗</span></button></div></form></div></dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
